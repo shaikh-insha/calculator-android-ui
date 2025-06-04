@@ -1,28 +1,35 @@
 # calculator-android-ui
 A simple Android calculator app built using XML layouts with ripple effects, supporting basic arithmetic operations.
-# Android Calculator App
 
-This is a simple and clean calculator application built for Android using native XML layouts. The app supports basic arithmetic operations like addition, subtraction, multiplication, and division.
+## 🧩 Code Overview
 
-## 🔧 Features
+The app is structured using native Android XML for UI and Java/Kotlin for logic. The layout file defines all calculator buttons and display fields using `ConstraintLayout` and nested `LinearLayouts`.
 
-- 📱 Clean and responsive UI using ConstraintLayout and LinearLayouts
-- 🌊 Custom ripple effects for buttons to enhance user experience
-- ✏️ Displays both current expression and result with separate `TextView`s
-- 🔢 Supports basic operations: `+`, `-`, `×`, `/`, `%`, brackets, and sign toggle
-- 🧠 Optimized layout using `layout_weight` for consistent button sizing
+### 🔹 activity_main.xml
 
-## 💡 Tech Stack
+Defines the entire UI:
+- Two `TextView`s at the top for expression and result
+- Five rows of buttons (numbers, operations, and functions)
+- Each row uses horizontal `LinearLayout` with `layout_weight` to ensure equal-sized buttons
 
-- **Language**: Java (or Kotlin if you’re using it)
-- **UI**: Android XML
-- **IDE**: Android Studio
-- **Min SDK**: 21+
+### 🔹 UI Features
+- Ripple effects for number and operation buttons (via `ripple_effect_numbers.xml` and `ripple_effect_operations.xml`)
+- Gradient background for the equal (`=`) button via `red_button.xml`
+- Responsive design with `weightSum` and `layout_weight`
 
-## 🚀 Getting Started
+### 🔹 Drawable Files
+- `ripple_effect_numbers.xml`: Custom touch feedback for number keys
+- `ripple_effect_operations.xml`: Visual feedback for operators
+- `gradient_effect.xml`: Red gradient for the equals button background
 
-To run this app:
-1. Clone this repo
-2. Open it in Android Studio
-3. Connect a virtual or real Android device
-4. Click **Run**
+### 🔹 Color References
+- Uses color resources defined in `colors.xml` like `@color/colorWhite`, `@color/colorGrey`, etc.
+
+### 🔹 Java/Kotlin Code (MainActivity)
+- Will handle:
+  - Button click listeners
+  - String expression building
+  - Calculation logic using `eval()` or a custom parser
+  - Display updates for both input and result
+
+
